@@ -44,7 +44,6 @@ def two_sum_better(nums: list, target: int) -> list:
             return [num_to_index[complement], index]
         num_to_index[number] = index
 
-
 def test_function(f):
     nums = [2, 7, 11, 15]
     target = 9
@@ -61,6 +60,11 @@ def test_function(f):
     nums = [1, 2]
     target = 10
     assert f(nums, target) is None, "Test case 4 failed"
+
+    nums = [10, 11, 18, 19]
+    target = 37
+    assert f(nums, target) == [2, 3], "Test case 5 failed"
+
 
 
 test_function(two_sum)
