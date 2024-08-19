@@ -40,7 +40,7 @@ def test_function(f):
 
     nums1 = [1, 2]
     nums2 = [3, 4, 5]
-    assert f(nums1, nums2) == 3.0, f"Test case 3 failed: expected 3.5, got {f(nums1, nums2)}"
+    assert f(nums1, nums2) == 3.0, f"Test case 3 failed: expected 3.0 got {f(nums1, nums2)}"
 
     nums1 = []
     nums2 = [1]
