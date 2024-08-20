@@ -1,0 +1,5 @@
+To solve the problem of finding the longest palindromic substring, we can think of a palindrome as something that expands around its center. For example, in the word "racecar," the palindrome "racecar" expands out from the center 'e'. Palindromes can have either a single letter as the center (like 'e' in "racecar") or a pair of letters (like the middle 'bb' in "abba").
+
+The approach is simple: for each letter (and pair of letters) in the string, we try to expand outwards and see how far the letters match on both sides. We do this for every possible center in the string. As we check each center, we keep track of the longest palindrome we've found so far by updating the start and end positions of this palindrome.
+
+After we've checked all possible centers, we return the substring that corresponds to the longest palindrome we've found. This method ensures that the function runs efficiently, even for large strings, by focusing only on the necessary checks.
