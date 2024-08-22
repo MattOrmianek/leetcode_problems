@@ -19,20 +19,20 @@ Output: "PAHNAPLSIIGYEI"
 def zigzag_conversation(s: str, rows: int) -> str:
     list_of_string = list(s)
     skip = False
+    counter = 0
     for i in range(len(list_of_string)):
         if skip:
             skip = False
-            print("skipped")
             continue
         element = list_of_string[i]
         print(element)
 
-
-        index = i + 1
-        if index % rows == 0:
+        counter += 1
+        if counter % rows == 0:
             print()
             print(list_of_string[i+1])
             print()
+            counter = 0
             skip = True
 
 
