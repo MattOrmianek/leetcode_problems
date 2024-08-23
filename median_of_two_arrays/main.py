@@ -20,14 +20,15 @@ Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 def findMedianSortedArrays(nums1: list, nums2: list) -> float:
     nums = nums1 + nums2
     nums.sort()
-
     if len(nums) % 2 == 0:
         middle1 = len(nums) // 2 - 1
         middle2 = len(nums) // 2
-        return (nums[middle1] + nums[middle2]) / 2
+        output = (float(nums[middle1]) + float(nums[middle2])) / 2
+
     else:
         middle = len(nums) // 2
-        return nums[middle]
+        output = float(nums[middle])
+    return output
 
 def test_function(f):
     nums1 = [1, 3]
