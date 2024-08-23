@@ -13,9 +13,11 @@ Input: s = "cbbd"
 Output: "bb"
 """
 def longestPalindrome(s: str) -> str:
-    if len(s) == 0:
-        return ""
-
+    def expandAroundCenter(s, left, right):
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return right - left - 1
     start, end = 0, 0
 
     for i in range(len(s)):
@@ -28,12 +30,6 @@ def longestPalindrome(s: str) -> str:
             end = i + max_len // 2
 
     return s[start:end + 1]
-
-def expandAroundCenter(s: str, left: int, right: int) -> int:
-    while left >= 0 and right < len(s) and s[left] == s[right]:
-        left -= 1
-        right += 1
-    return right - left - 1
 
 def test_function(f):
     assert f("babad") == "bab" or f("babad") == "aba", "Test case 1 failed"
