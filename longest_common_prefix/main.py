@@ -23,16 +23,16 @@ Constraints:
 strs[i] consists of only lowercase English letters.
 """
 
-def longestCommonPrefix(strs):
+def longestCommonPrefix(strings):
     """
     :type strs: List[str]
     :rtype: str
     """
-    min_len = min_len = min(len(s) for s in strs)
+    min_len = min_len = min(len(s) for s in strings)
     common = ""
     for i in range(0, min_len):
         candidate = []
-        for string in strs:
+        for string in strings:
             candidate.append(string[i])
         if len(set(candidate)) == 1:
             common += candidate[0]
