@@ -28,7 +28,7 @@ def longestCommonPrefix(strings):
     :type strs: List[str]
     :rtype: str
     """
-    min_len = min_len = min(len(s) for s in strings)
+    min_len = len(min(strings, key=len))
     common = ""
     for i in range(0, min_len):
         candidate = []
@@ -36,7 +36,7 @@ def longestCommonPrefix(strings):
             candidate.append(string[i])
         if len(set(candidate)) == 1:
             common += candidate[0]
-        if len(set(candidate)) != 1:
+        else:
             break
 
     return common
