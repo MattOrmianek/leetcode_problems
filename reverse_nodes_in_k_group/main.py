@@ -43,6 +43,8 @@ def reverse_k_group(head: Optional[ListNode], k: int) -> Optional[ListNode]:
     prev = None
     current = head
     for _ in range(k):
+        if not current:
+            break
         nxt = current.next
         current.next = prev
         prev = current
@@ -50,7 +52,8 @@ def reverse_k_group(head: Optional[ListNode], k: int) -> Optional[ListNode]:
 
     # After reverse, we know that `head` is the tail of the group.
     # And `curr` is the next pointer in original linked list order
-    head.next = reverse_k_group(current, k)
+    if head:
+        head.next = reverse_k_group(current, k)
     return prev
 
 
@@ -114,3 +117,6 @@ def test_function(function: Callable) -> None:
             print(f"Actual Output:   {result_list}")
 
     print(f"Passed {passed}/{total} test cases.")
+
+
+test_function(reverse_k_group)
